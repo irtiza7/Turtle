@@ -7,21 +7,26 @@ void showError();
 #define yywrap() 1
 
 %}
-identifier [a-zA-Z]+ | [a-zA-Z]+[a-zA-Z0-9]+
-number [^a-z]+[0-9]+
 
 %%
 
-"irtiza" {
-    printf("hello irtiza\n");
+(def|return|var|if|else|elif|and|or|null|true|false) {
+    printf("keyword\n");
 }
-{number} {
-    printf("number\n");
-}
-{identifier} {
+
+[a-zA-Z][a-zA-Z0-9]* {
     printf("identifier\n");
 }
-. ;
+
+[0-9][0-9]* {
+    printf("number\n");
+}
+
+[ \t\n] ;
+
+. {
+    printf("invalid character\n");
+}
 
 %%
 
