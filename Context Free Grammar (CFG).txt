@@ -1,0 +1,35 @@
+statements ->           eps | statement newline statement
+
+statement ->            keyword identifier assignment expression
+                        | func_def delimiter statements delimiter
+                        | identifier assignment expression
+                        | keyword delimiter expression operator expression delimiter
+                        | identifier assignment func_def delimiter stmts delimiter
+                        | keyword identifier assignment func
+
+func_def ->             keyword identifier delimiter [identifier]* delimiter
+
+func ->                 identifier delimiter delimiter
+
+identifier ->           [a-zA-Z][a-zA-Z0-9]*
+
+expression ->           literal operator literal | literal
+
+literal ->              num_literal
+
+num_literal ->          [0-9][0-9]*
+
+assignment ->           =
+
+delimiter ->            ; | , | [ | ] | { | } | ( | )
+
+operator ->             + | - | * | / | %
+
+keyword ->              def | return | if | else | elif | var | true | false | null | and | or
+
+===================================================
+float:D*.D+|D+.D*
+string:"([^"]|\\")*"
+comment://[^\\n]*\n
+comment:/\*(\*[^/]|[^*])*\*/
+whitespace:\ |\n|\t
