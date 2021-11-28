@@ -1,0 +1,6 @@
+.l FILE
+has following sections
+	1. Header files, declarations, varibles, etc.
+	2. Regular Expressions
+	3. Token Specifications
+	4. Functions (main, or others)
