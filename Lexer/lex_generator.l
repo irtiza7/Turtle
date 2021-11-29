@@ -7,6 +7,7 @@ void showError();
 
 %}
 
+
 %%
 
 (def|return|var|if|else|elif|and|or|null|true|false) {
@@ -23,6 +24,14 @@ void showError();
 
 [ \t\n] ;
 
+[\(|\)] {
+    printf("DELIMITER\n");
+}
+
+[{|}] {
+    printf("DELIMITER\n");
+}
+
 (;|\,|[|]) {
     printf("DELIMITER\n");
 }
@@ -37,8 +46,13 @@ void showError();
 
 %%
 
-int main()
+int main(int argc, char *argv[])
 {
+    if (argc != 2) {
+        printf("Usage: <./a.exe> <source file> \n");
+    }
+    
+    yyin = fopen(argv[1], "r");
     yylex();
 }
 void showError(){
