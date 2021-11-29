@@ -4,9 +4,7 @@
 #define yywrap() 1
 
 void showError();
-
 %}
-
 
 %%
 
