@@ -1,0 +1,4 @@
+var a = 10.0;
+var b = a;
+var c = a/b;
+print(c);
