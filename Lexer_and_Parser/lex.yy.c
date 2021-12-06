@@ -286,9 +286,9 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 #define YY_END_OF_BUFFER 16
 static yyconst short int yy_accept[50] =
     {   0,
-        0,    0,   16,   14,    6,    7,    5,    8,    9,   12,
-        3,   11,   13,    2,    2,    2,    2,    2,    2,    2,
-        2,    2,    2,    2,   10,    5,    0,    3,    2,    2,
+        0,    0,   16,   14,   11,   12,    5,    7,    8,   13,
+        3,    6,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    9,    5,   10,    0,    3,    2,    2,
         2,    2,    2,    1,    2,    2,    2,    2,    4,    2,
         2,    2,    2,    2,    2,    2,    2,    2,    0
     } ;
@@ -300,15 +300,15 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    2,    1,    1,    1,    1,    4,    1,    1,    5,
         6,    4,    4,    7,    1,    8,    4,    9,    9,    9,
-        9,    9,    9,    9,    9,    9,    9,    1,   10,    1,
-       11,    1,    1,    1,   12,   12,   12,   12,   12,   12,
-       12,   12,   12,   12,   12,   12,   12,   12,   12,   12,
-       12,   12,   12,   12,   12,   12,   12,   12,   12,   12,
-        1,    1,    1,    1,    1,    1,   13,   12,   12,   14,
+        9,    9,    9,    9,    9,    9,    9,    1,    1,    1,
+       10,    1,    1,    1,   11,   11,   11,   11,   11,   11,
+       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
+       11,   11,   11,   11,   11,   11,   11,   11,   11,   11,
+        1,    1,    1,    1,    1,    1,   12,   11,   11,   13,
 
-       15,   16,   12,   12,   17,   12,   12,   18,   12,   19,
-       20,   12,   12,   21,   22,   23,   24,   25,   12,   12,
-       12,   12,   26,   27,   26,    1,    1,    1,    1,    1,
+       14,   15,   11,   11,   16,   11,   11,   17,   11,   18,
+       19,   11,   11,   20,   21,   22,   23,   24,   11,   11,
+       11,   11,   25,   26,   27,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -328,24 +328,24 @@ static yyconst int yy_ec[256] =
 static yyconst int yy_meta[28] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    2,    1,
-        1,    2,    2,    2,    2,    2,    2,    2,    2,    2,
-        2,    2,    2,    2,    2,    1,    1
+        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
+        2,    2,    2,    2,    1,    1,    1
     } ;
 
 static yyconst short int yy_base[51] =
     {   0,
         0,    0,   63,   64,   64,   64,   64,   64,   64,   64,
-       20,   64,   64,    0,   43,   46,   42,   46,   42,   33,
-       35,   40,   33,   40,   64,   64,   43,   22,    0,   37,
-       34,   15,   31,    0,   30,   24,   22,   24,   35,   27,
-       27,   19,   22,   15,   23,   21,   14,   15,   64,   31
+       20,   64,    0,   44,   47,   43,   47,   43,   34,   36,
+       41,   34,   41,   64,   64,   64,   43,   22,    0,   38,
+       35,   16,   32,    0,   31,   25,   23,   25,   35,   28,
+       28,   20,   23,   16,   24,   22,   15,   16,   64,   31
     } ;
 
 static yyconst short int yy_def[51] =
     {   0,
        49,    1,   49,   49,   49,   49,   49,   49,   49,   49,
-       49,   49,   49,   50,   50,   50,   50,   50,   50,   50,
-       50,   50,   50,   50,   49,   49,   49,   49,   50,   50,
+       49,   49,   50,   50,   50,   50,   50,   50,   50,   50,
+       50,   50,   50,   49,   49,   49,   49,   49,   50,   50,
        50,   50,   50,   50,   50,   50,   50,   50,   49,   50,
        50,   50,   50,   50,   50,   50,   50,   50,    0,   49
     } ;
@@ -353,8 +353,8 @@ static yyconst short int yy_def[51] =
 static yyconst short int yy_nxt[92] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,    4,   11,   12,
-       13,   14,   15,   16,   17,   18,   19,   14,   20,   21,
-       22,   14,   23,   14,   24,   25,   26,   27,   28,   27,
+       13,   14,   15,   16,   17,   18,   13,   19,   20,   21,
+       13,   22,   13,   23,   24,   25,   26,   27,   28,   27,
        28,   40,   29,   34,   48,   34,   41,   34,   47,   34,
        46,   34,   34,   39,   34,   45,   44,   43,   42,   34,
        34,   39,   38,   37,   36,   34,   35,   34,   33,   32,
@@ -372,8 +372,8 @@ static yyconst short int yy_chk[92] =
         1,    1,    1,    1,    1,    1,    1,   11,   11,   28,
        28,   32,   50,   48,   47,   46,   32,   45,   44,   43,
        42,   41,   40,   39,   38,   37,   36,   35,   33,   31,
-       30,   27,   24,   23,   22,   21,   20,   19,   18,   17,
-       16,   15,    3,   49,   49,   49,   49,   49,   49,   49,
+       30,   27,   23,   22,   21,   20,   19,   18,   17,   16,
+       15,   14,    3,   49,   49,   49,   49,   49,   49,   49,
        49,   49,   49,   49,   49,   49,   49,   49,   49,   49,
        49,   49,   49,   49,   49,   49,   49,   49,   49,   49,
        49
@@ -644,12 +644,13 @@ case 1:
 YY_RULE_SETUP
 #line 15 ".\\lex_generator.l"
 {
+    yylval.name = yytext[0];
     return keyword;
 }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 18 ".\\lex_generator.l"
+#line 19 ".\\lex_generator.l"
 {
     yylval.name = yytext[0];
     return identifier;
@@ -657,79 +658,78 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 22 ".\\lex_generator.l"
+#line 23 ".\\lex_generator.l"
 {
-    yylval.num = atoi(yytext);
+    yylval.integer = atoi(yytext);
     return int_n;
 }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 26 ".\\lex_generator.l"
+#line 27 ".\\lex_generator.l"
 {
-    yylval.deci = atof(yytext); 
+    yylval.decimal = atof(yytext); 
     return float_n;
 }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 30 ".\\lex_generator.l"
+#line 31 ".\\lex_generator.l"
 {
+    yylval.oper = yytext[0];
     return operator;
 }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 33 ".\\lex_generator.l"
-;
-	YY_BREAK
-case 7:
-YY_RULE_SETUP
 #line 35 ".\\lex_generator.l"
 {
-    return newline;
+    return assignment;
 }
 	YY_BREAK
-case 8:
+case 7:
 YY_RULE_SETUP
 #line 38 ".\\lex_generator.l"
 {
     return o_brace;
 }
 	YY_BREAK
-case 9:
+case 8:
 YY_RULE_SETUP
 #line 41 ".\\lex_generator.l"
 {
     return c_brace;
 }
 	YY_BREAK
-case 10:
+case 9:
 YY_RULE_SETUP
 #line 44 ".\\lex_generator.l"
 {
-    return delimiter;
+    return o_curly;
+}
+	YY_BREAK
+case 10:
+YY_RULE_SETUP
+#line 47 ".\\lex_generator.l"
+{
+    return c_curly;
 }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 47 ".\\lex_generator.l"
-{
-    return semicolon;
-}
+#line 50 ".\\lex_generator.l"
+;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 50 ".\\lex_generator.l"
-{
-    return delimiter;
-}
+#line 51 ".\\lex_generator.l"
+;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 53 ".\\lex_generator.l"
 {
-    return assignment;
+    return delimiter;
 }
 	YY_BREAK
 case 14:

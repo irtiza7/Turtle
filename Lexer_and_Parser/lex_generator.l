@@ -13,6 +13,7 @@ void showError();
 %%
 
 (def|return|var|if|else|elif|and|or|null|true|false) {
+    yylval.name = yytext[0];
     return keyword;
 }
 [a-zA-Z][a-zA-Z0-9]* {
@@ -20,20 +21,19 @@ void showError();
     return identifier;
 }
 [0-9][0-9]* {
-    yylval.num = atoi(yytext);
+    yylval.integer = atoi(yytext);
     return int_n;
 }
 [0-9]+\.[0-9]+ 	{
-    yylval.deci = atof(yytext); 
+    yylval.decimal = atof(yytext); 
     return float_n;
 }
 [+|-|*|/|%] {
+    yylval.oper = yytext[0];
     return operator;
 }
-[ \t] ;
-
-[\n] {
-    return newline;
+(=) {
+    return assignment;
 }
 [\(] {
     return o_brace;
@@ -41,17 +41,17 @@ void showError();
 [\)] {
     return c_brace;
 }
-[{|}] {
-    return delimiter;
+[{] {
+    return o_curly;
 }
-[;] {
-    return semicolon;
+[}] {
+    return c_curly;
 }
+[ \t] ;
+[\n] ;
+
 (\,|[|]) {
     return delimiter;
-}
-(=) {
-    return assignment;
 }
 . {
     showError();

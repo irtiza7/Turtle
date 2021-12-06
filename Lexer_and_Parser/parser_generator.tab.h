@@ -41,14 +41,15 @@
    enum yytokentype {
      o_brace = 258,
      c_brace = 259,
-     delimiter = 260,
-     identifier = 261,
-     assignment = 262,
-     newline = 263,
-     semicolon = 264,
-     int_n = 265,
-     float_n = 266,
-     keyword = 267
+     o_curly = 260,
+     c_curly = 261,
+     delimiter = 262,
+     assignment = 263,
+     operator = 264,
+     keyword = 265,
+     identifier = 266,
+     int_n = 267,
+     float_n = 268
    };
 #endif
 
@@ -59,17 +60,17 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 20 ".\\parser_generator.y"
+#line 30 ".\\parser_generator.y"
 
-	char name[20];
-	char op;
-    int num;
-	float deci;
+	char *name[20];
+	char oper;
+    int integer;
+	float decimal;
 
 
 
 /* Line 1676 of yacc.c  */
-#line 73 "parser_generator.tab.h"
+#line 74 "parser_generator.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

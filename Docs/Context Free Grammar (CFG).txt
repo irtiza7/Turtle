@@ -1,4 +1,41 @@
-statements ->           eps | statement newline statement
+statements:
+		| statement 
+	| statement semicolon statements
+
+statement:
+	keyword identifier assignment expression {
+		$2 = $4;
+	}
+	| identifier assignment expression {
+		$1 = $3;
+	}
+	| func_def delimiter statements delimiter compound_statement
+
+func_def: keyword identifier o_brace [identifier]* c_brace
+
+compound_statement: delimiter statements delimiter
+
+identifier: [a-zA-Z][a-zA-Z0-9]*
+
+expression: 
+	int_n operator expression {
+		$$ = $1 $2 $3; 
+	}
+	|identifier operator expression {
+		$$ = $1 $2 $3; 
+	}
+	| int_n
+	| identifier
+
+operator: +|-|*|/|%
+
+semicolon: ;
+
+;
+
+===================================================
+
+statements ->           eps | statement ';' statement
 
 statement ->            keyword identifier assignment expression
                         | func_def delimiter statements delimiter

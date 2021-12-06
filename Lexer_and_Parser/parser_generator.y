@@ -6,46 +6,61 @@ int yyerror(char *s);
 
 %}
 
-%token o_brace c_brace delimiter identifier assignment newline semicolon
+%start statements
+
+%token o_brace 
+%token c_brace
+%token o_curly
+%token c_curly
+
+%token delimiter
+%token assignment 
+
+%token <oper> operator
+%token <name> keyword
+%token <name> identifier
+%token <integer> int_n
+%token <decimal> float_n
+
+%type <decimal> expression
 
 %left '+''-'
 %left '%''*''/'
 
-%type <float> identifier
-%token <num> int_n
-%token <deci> float_n
-%type <deci> expression
-%token <name> keyword
-
 %union{
 	char name[20];
-	char op;
-    int num;
-	float deci;
+	char oper;
+    int integer;
+	float decimal;
 }
 
 %%
 
-stmts:
-		
-	| stmt semicolon stmts
-	| stmt semicolon 
+statements: statement 
 ;
-stmt: 
-	keyword identifier assignment expression 	{ $2 = $4; }
-	| identifier assignment expression 			{ $1 = $3; }
-	| keyword o_brace expression c_brace 		{
-		if (keyword == "print") {
-			printf("%d\n", $3);
-		}
-	}
+statements: statement statements 
 ;
-expression: 
-	int_n '+' expression 	{ $$ = $1 + $3; }
-	| int_n 				{ $$ = $1; }
-	| float_n 				{ $$ = $1; }
-	| identifier 			{ $$ = $1; }
+
+statement: keyword identifier assignment expression 	{ $2 = $4; }
 ;
+statement: identifier assignment expression 			{ $1 = $3; }
+;
+statement: keyword o_brace expression c_brace 			{ 
+															if (keyword == "print") { 
+																printf("%d\n", $3); 
+															}
+														}
+;
+
+expression: int_n '+' expression 	{ $$ = $1 + $3; }
+;
+expression:	int_n 					{ $$ = $1; }
+;
+expression:	float_n 				{ $$ = $1; }
+;
+expression:	identifier 				{ $$ = $1; }
+;
+
 %%
 
 int yyerror(char *s) {
