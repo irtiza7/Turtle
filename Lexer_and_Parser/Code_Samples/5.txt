@@ -1,0 +1,11 @@
+define main() {
+	var temp = 10
+
+	if (temp < 10) {
+		print(temp)
+	} else {
+		print(10)
+	}
+}
+
+main()

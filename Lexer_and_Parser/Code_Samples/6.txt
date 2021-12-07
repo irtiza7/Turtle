@@ -1,0 +1,32 @@
+define printSwap(var status, var a, var b) {
+	var c = a
+	var a = b
+	var b = c
+	
+	print(a)
+	print(b)
+}
+define main() {
+	var status = true
+	var a = 10
+	var b = 20
+	printSwap(status, a, b)
+}
+
+main()
+
+
+int main() {
+    yyparse();
+    return 0;
+}
+
+int main(int argc, char *argv[])
+{
+    if (argc != 2) {
+        printf("Usage: <./a.exe> <source file> \n");
+    }
+    
+    yyin = fopen(argv[1], "r");
+    yylex();
+}

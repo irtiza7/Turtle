@@ -1,0 +1,9 @@
+define displayTen() {
+	print(10)
+}
+
+define main() {
+	displayTen()
+}
+
+main()

@@ -1,0 +1,11 @@
+var status = true
+if(status) {
+	var s = "Kowalski Analysis"
+	print(s)
+}
+
+
+
+
+line : assignment newline
+line : expression newline 	

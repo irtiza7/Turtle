@@ -1,0 +1,7 @@
+define main() {
+	var temp = 10
+
+	return 10
+}
+main()
+
