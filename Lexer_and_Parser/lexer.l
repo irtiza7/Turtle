@@ -51,7 +51,7 @@ printf("true\n");
 "{"     {return open_curly;}
 "}"     {return close_curly;}
 
-[ \t]	;
+[ \t\n]	;
 
 . {showError();}
 

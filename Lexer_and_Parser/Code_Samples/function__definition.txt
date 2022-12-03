@@ -1,0 +1,1 @@
+define myFunt (a) { var age = 10 }
